@@ -34,8 +34,8 @@ sudo usermod -aG docker $USER
 ```bash
 # Upload your application files to the server
 # You can use git, scp, or any other method
-git clone <your-repo-url>
-cd Portfolio
+git clone https://github.com/Vpn97/java-dev-portfolio.git
+cd java-dev-portfolio
 ```
 
 ### 3. Configure Your Domain

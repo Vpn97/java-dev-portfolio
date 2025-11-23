@@ -229,8 +229,8 @@ Portfolio/
 
 1. **On your Linux server:**
    ```bash
-   git clone <your-repo-url>
-   cd Portfolio
+   git clone https://github.com/Vpn97/java-dev-portfolio.git
+   cd java-dev-portfolio
    chmod +x deploy.sh
    ./deploy.sh
    ```

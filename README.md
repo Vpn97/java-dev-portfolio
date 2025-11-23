@@ -60,8 +60,8 @@ portfolio/
 1. **Clone the repository**
 
    ```bash
-   git clone https://github.com/vishalnagvadiya/portfolio.git
-   cd portfolio
+   git clone https://github.com/Vpn97/java-dev-portfolio.git
+   cd java-dev-portfolio
    ```
 
 2. **Install dependencies**
@@ -162,7 +162,7 @@ Then add "Hire Me" buttons in the Hero section by uncommenting the relevant code
    git add .
    git commit -m "Initial commit"
    git branch -M main
-   git remote add origin https://github.com/yourusername/portfolio.git
+   git remote add origin https://github.com/Vpn97/java-dev-portfolio.git
    git push -u origin main
    ```
 
@@ -256,8 +256,8 @@ For production deployment on your own Linux server with Docker, Nginx, and HTTPS
 
 ```bash
 # On your Linux server
-git clone <your-repo-url>
-cd Portfolio
+git clone https://github.com/Vpn97/java-dev-portfolio.git
+cd java-dev-portfolio
 
 # Run the automated deployment script
 chmod +x deploy.sh

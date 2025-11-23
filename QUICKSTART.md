@@ -2,21 +2,6 @@
 
 ## 🚀 Deploy in 3 Steps
 
-### Step 1: Prepare Your Server
-
-```bash
-# SSH into your Linux server
-ssh user@your-server-ip
-
-# Clone your repository
-git clone <your-repo-url>
-cd Portfolio
-```
-
-### Step 2: Run Deployment Script
-
-```bash
-# Make the script executable
 chmod +x deploy.sh
 
 # Run the deployment script

@@ -36,9 +36,13 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# Docker
-certbot/
-nginx/logs/
+# Docker - exclude generated files but keep config
+certbot/conf/*
+!certbot/conf/.gitkeep
+certbot/www/*
+!certbot/www/.gitkeep
+nginx/logs/*
+!nginx/logs/.gitkeep
 *.tar.gz
 
 # IDE

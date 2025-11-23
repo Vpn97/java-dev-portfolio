@@ -1,0 +1,2 @@
+# This file ensures the nginx/logs directory exists in Git
+# Nginx access and error logs will be written here

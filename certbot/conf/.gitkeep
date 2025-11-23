@@ -1,0 +1,2 @@
+# This file ensures the certbot/conf directory exists in Git
+# The actual SSL certificates will be generated during deployment

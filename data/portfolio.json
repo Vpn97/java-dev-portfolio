@@ -1,0 +1,423 @@
+{
+  "personal": {
+    "name": "Vishal Nagvadiya",
+    "role": "Senior Java Developer",
+    "title": "Full Stack Java Developer | Microservices Expert | Cloud Enthusiast",
+    "location": "Ahmedabad, India",
+    "email": "vpn0097@gmail.com",
+    "phone": "+91 8200468176",
+    "summary": "Seasoned Full Stack Java Developer with 6+ years of experience in designing and developing scalable enterprise applications. Expertise in Spring Boot, microservices architecture, and cloud-native solutions. Proven track record of delivering high-performance systems using modern Java frameworks, reactive programming, and DevOps practices.",
+    "social": {
+      "github": "https://github.com/Vpn97",
+      "linkedin": "https://www.linkedin.com/in/vishal-nagvadiya",
+      "twitter": "",
+      "portfolio": ""
+    },
+    "freelance": {
+      "fiverr": "",
+      "upwork": "",
+      "freelancer": ""
+    }
+  },
+  "skills": {
+    "backend": [
+      "Java 8/11/17/21",
+      "Spring Boot",
+      "Spring Framework",
+      "Microservices",
+      "REST APIs",
+      "Hibernate/JPA",
+      "Maven/Gradle"
+    ],
+    "frontend": [
+      "Angular 15+",
+      "JavaScript/TypeScript",
+      "HTML5/CSS3",
+      "Material-UI",
+      "Bootstrap"
+    ],
+    "databases": [
+      "PostgreSQL",
+      "MySQL",
+      "MongoDB",
+      "Redis",
+      "Oracle"
+    ],
+    "messaging": [
+      "Apache Kafka",
+      "RabbitMQ",
+      "JMS"
+    ],
+    "cloud": [
+      "AWS (EC2, S3, Lambda, RDS)",
+      "Docker",
+      "Kubernetes",
+      "Jenkins",
+      "GitLab CI/CD"
+    ],
+    "tools": [
+      "Git/GitHub",
+      "JIRA",
+      "Postman/Swagger",
+      "SonarQube",
+      "IntelliJ IDEA, Eclipse, VS Code",
+      "JMeter",
+      "JasperSoft iReport"
+    ]
+  },
+  "experience": [
+    {
+      "id": 1,
+      "company": "Einfochips Ltd. (An Arrow Company)",
+      "position": "Senior Software Engineer (Level-2)",
+      "location": "Ahmedabad, India | Hybrid",
+      "duration": "July 2025 - Present",
+      "startDate": "2025-07",
+      "endDate": "Present",
+      "description": "Worked as a Senior Engineer at eInfochips on Werfen’s GEMWeb Plus (GWP) project — a next-generation connectivity and data management platform for Werfen’s GEM series analyzers.",
+      "responsibilities": [
+        "Worked on technology migration from legacy EJB-based monolithic architecture to Java 17 Spring Boot microservices, enabling cloud deployment and improved scalability",
+        "Migrated frontend stack from older frameworks to Angular 17, enhancing UI performance and maintainability",
+        "Designed and developed RESTful APIs to support new features and integrations with third-party systems",
+        "Containerized and deployed microservices using Docker and Kubernetes, establishing CI/CD pipelines"
+      ],
+      "technologies": [
+        "Java 17",
+        "Spring Boot",
+        "Microservices",
+        "Angular 17",
+        "PostgreSQL",
+        "EHCache",
+        "Docker",
+        "Kubernetes",
+        "AWS"
+      ]
+    },
+    {
+      "id": 2,
+      "company": "Tata Consultancy Services",
+      "position": "Senior Java Developer",
+      "location": "Gandhinagar, India",
+      "duration": "Aug 2023 - Jun 2025",
+      "startDate": "2023-08",
+      "endDate": "2025-06",
+      "description": "TCS Products - Invoice Management System (IMS), Unified Tax System (UTS)",
+      "responsibilities": [
+        "Development: Led and developed RESTful APIs and microservices of core modules like invoice processing, notification services, document generation, tax processing, compliance processing, and tax audit microservices using Java, Spring, Spring Boot, and JPA, ensuring scalability, security, and performance.",
+        "Integration: Integrated Apache Kafka for asynchronous communication and enhanced system performance by implementing batch processing, optimizing JPA queries, and introducing parallel data handling, resulting in a 25% reduction in system latency during high-volume operations.",
+        "Security: Implemented JWT, API Key authentication, and role-based access control (RBAC); improved observability with centralized logging, monitoring, and distributed tracing.",
+        "CI/CD Automation: Contributed to Jenkins pipeline improvements for faster and more reliable microservice deployments, reducing manual intervention and errors.",
+        "Leadership: Mentored junior developers, conducted code reviews, collaborated with cross-functional teams (QA, DevOps, Business Analysts) for end-to-end feature delivery, and optimized team skills for better project outcomes.",
+        "Client Collaboration: Participated in client discussions for requirement gathering and architecture reviews, leading to better alignment of technical solutions with business needs."
+      ],
+      "technologies": [
+        "Java 17",
+        "Spring Boot",
+        "Angular 17",
+        "Microservices",
+        "Apache Kafka",
+        "Redis",
+        "Kong API Gateway",
+        "MySQL",
+        "PostgreSQL",
+        "Oracle Database",
+        "REST APIs",
+        "JUnit",
+        "Git & SVN",
+        "Jenkins"
+      ]
+    },
+    {
+      "id": 3,
+      "company": "Tata Consultancy Services",
+      "position": "Java Developer (Module Lead)",
+      "location": "Gandhinagar, India",
+      "duration": "Aug 2021 - July 2023",
+      "startDate": "2021-08",
+      "endDate": "2023-07",
+      "description": "Tax & Invoice Management System - Legacy Modernization – Monolith to Microservices Migration",
+      "responsibilities": [
+        "Migration: Led migration of monolithic application to microservices architecture, significantly improving scalability, modularity, and deployment flexibility for different business modules.",
+        "Development: Built Spring Boot microservices with API Gateway, service discovery, and Docker containerization, enhancing system reliability and maintainability.",
+        "CI/CD: Designed and implemented Jenkins - CI/CD pipelines for automated deployment of microservices and Angular apps on Linux VMs (RHEL), improving release speed and reducing manual errors.",
+        "Cloud Deployment: Deployed Spring Boot microservices on Azure Cloud using Azure App Services, ensuring high availability and scalability.",
+        "Testing: Conducted rigorous testing, debugging, and performance tuning to ensure stability, optimal performance, and a seamless user experience.",
+        "Reporting: Developed a Jasper-based PDF generation framework supporting multi-language customization, improving document generation performance and flexibility for client needs."
+      ],
+      "technologies": [
+        "Java 8",
+        "Spring Framework",
+        "Spring Boot",
+        "Angular 12",
+        "MySQL & PostgreSQL",
+        "REST APIs",
+        "Hibernate",
+        "Jasper Reports",
+        "Batch Processing",
+        "Jenkins - CI/CD",
+        "Linux VMs (RHEL)",
+        "Docker"
+      ]
+    },
+    {
+      "id": 4,
+      "company": "Tata Consultancy Services",
+      "position": "Developer",
+      "location": "Gandhinagar, India",
+      "duration": "Aug 2019 – Aug 2021",
+      "startDate": "2019-08",
+      "endDate": "2021-08",
+      "description": "iTax and TIMS - Kenya Revenue Authority (KRA), eTax – Uganda Revenue Authority (URA)",
+      "responsibilities": [
+        "Worked on bug fixing and implementing new enhancements in the iTax Application, utilizing JSP for the front-end and Java, Spring, and Hibernate for the back-end, ensuring reliable functionality and optimal performance.",
+        "Developed RESTful APIs and SOAP web services to enable seamless communication and data exchange between systems for the eTax platform.",
+        "Contributed to the development of the Tax Invoice Management System (TIMS) using Angular 10 for the front-end and Spring Boot, JPA, and Hibernate for the back-end, improving system functionality and user experience.",
+        "Worked on technology migration from Struts to Spring MVC for the eTax System for Payment and Return Module.",
+        "Enhanced the quality, fixed security issues, and optimized the performance of the TCS Core Tax Framework to ensure a secure and efficient environment.",
+        "Developed native Android applications using Java to implement several tax-related functionalities for the Tax System, improving mobile access and usability.",
+        "Worked on a client demo project leveraging Spring Boot, Angular, and Spring microservices, delivering a modern and scalable solution for the client."
+      ],
+      "technologies": [
+        "Java 8",
+        "Spring",
+        "Spring MVC",
+        "Hibernate",
+        "Struts (migration from)",
+        "JSP",
+        "SOAP Web Services",
+        "RESTful APIs",
+        "Angular 10",
+        "Android (Java)",
+        "TCS Core Tax Framework"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "id": 1,
+      "name": "Unified Tax System (UTS)",
+      "description": "TCS Unified Tax System (UTS) is a comprehensive, integrated solution designed to streamline the administration of both direct and indirect tax collections. It simplifies payment processing and compliance, aggregates data from diverse sources, and enables cross-referencing across multiple information systems",
+      "technologies": [
+        "Java 17",
+        "Spring Boot",
+        "Spring Data JPA",
+        "Apache Kafka",
+        "PostgreSQL",
+        "Redis",
+        "Docker",
+        "Kubernetes",
+        "Angular"
+      ],
+      "category": [
+        "Spring Boot",
+        "Apache Kafka",
+        "Microservices",
+        "Hibernate/JPA",
+        "Angular",
+        "PostgreSQL",
+        "REST APIs",
+        "AWS"
+      ],
+      "github": "https://github.com/vishalnagvadiya/ecommerce-microservices",
+      "demo": "",
+      "highlights": [
+        "Developed RESTful APIs and microservices for core modules like return processing, notifications, document generation, workflow, compliance, and tax audit using Java, Spring Boot, and JPA",
+        "Implemented JWT, API Key authentication, and role-based access control (RBAC); improved observability with centralized logging, monitoring, and distributed tracing",
+        "Integrated Apache Kafka for asynchronous communication and enhanced system performance by implementing batch processing, optimizing JPA queries, and introducing parallel data handling, resulting in a 25% reduction in system latency during high-volume operations",
+        "Deployed microservices on AWS EC2 instances for different environments (development, testing, and production) using Docker and Kubernetes for containerization and orchestration",
+        "Mentored junior developers, conducted code reviews, collaborated with cross-functional teams (QA, DevOps, Business Analysts) for end-to-end feature delivery, and optimized team skills for better project outcomes",
+        "Participated in client discussions for requirement gathering and architecture reviews, leading to better alignment of technical solutions with business needs"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Tax & Invoice Management System (IMS)",
+      "description": "A simple and robust Invoice Management System designed to address government’s challenges in VAT collection and administration by delivering real-time/ near real-time access to invoice data, enhancing transparency, compliance, and revenue efficiency. The system efficiently verifies and stores an average of 1.5 million invoices daily, ensuring scalability, reliability, and real-time data integrity",
+      "technologies": [
+        "Java 17",
+        "Spring Boot",
+        "Spring Data JPA",
+        "Spring Security",
+        "Apache Kafka",
+        "OAuth2",
+        "Oracle Database",
+        "JWT",
+        "REST APIs",
+        "AWS"
+      ],
+      "category": [
+        "Spring Boot",
+        "Apache Kafka",
+        "Microservices",
+        "Hibernate/JPA",
+        "Angular",
+        "Oracle Database",
+        "REST APIs",
+        "AWS"
+      ],
+      "github": "https://github.com/vishalnagvadiya/banking-system",
+      "demo": "",
+      "highlights": [
+        "Led the migration of a monolithic application to microservices for multiple modules.",
+        "Built Spring Boot microservices using API Gateway, service discovery, and the SAGA pattern.",
+        "Performed performance testing with JMeter and optimized invoice processing.",
+        "Created a Jasper-based PDF generation system with multi-language support.",
+        "Developed reusable Angular components, pipes, and services to speed up UI development.",
+        "Set up Jenkins CI/CD pipelines for automated deployment on Linux servers.",
+        "Improved invoice validation and bulk processing using Redis, optimized SQL, and Kafka."
+      ]
+    },
+    {
+      "id": 3,
+      "name": "iTax and TIMS - Kenya Revenue Authority (KRA)",
+      "description": "iTax solution supports the Kenya Revenue Authority in efficiently managing tax collection processes. It offers a comprehensive, end-to-end tax lifecycle management system, covering taxpayer onboarding, return filing, payment processing, refunds, debt recovery, enforcement, risk assessment, workflow automation, and auditing",
+      "technologies": [
+        "Java 8",
+        "Spring MVC",
+        "Hibernate",
+        "PostgreSQL",
+        "JSP",
+        "JavaScript",
+        "SOAP Web Services",
+        "RESTful APIs",
+        "Tomcat, JBoss EAP"
+      ],
+      "category": [
+        "Spring MVC",
+        "Hibernate",
+        "PostgreSQL",
+        "REST APIs"
+      ],
+      "github": "https://github.com/vishalnagvadiya/realtime-chat",
+      "demo": "",
+      "highlights": [
+        "Worked on bug fixing by performing root cause analysis and replicating scenarios to identify and resolve issues effectively within strict SLAs",
+        "Worked on technology migration from Struts to Spring MVC for the eTax System for Payment and Return Module",
+        "Developed RESTful APIs and SOAP web services based on module-specific business requirements",
+        "Enhanced the quality, fixed security issues, and optimized the performance of the TCS Core Tax Framework to ensure a secure and efficient environment"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "KRA e-TIMS",
+      "description": "TIMS stands for Tax Invoice Management System. It’s a system introduced by the Kenya Revenue Authority (KRA) to modernize how tax invoices are issued, validated, and transmitted. Under TIMS, tax invoices (especially for VAT-registered taxpayers) are standardized, authenticated, and sent in real time (or near real time) to KRA. The system is integrated with iTax, KRA’s main tax platform (iTax), so invoice data can be monitored, stored, and reconciled.",
+      "technologies": [
+        "Java 11",
+        "Spring Boot",
+        "Spring Data JPA",
+        "Angular 10",
+        "Microservices",
+        "Oracle Database",
+        "JWT",
+        "REST APIs",
+        "Swagger",
+        "Tomcat"
+      ],
+      "category": [
+        "Spring Boot",
+        "Angular",
+        "Hibernate/JPA",
+        "Microservices",
+        "REST APIs",
+        "Oracle Database"
+      ],
+      "github": "https://github.com/vishalnagvadiya/task-management-api",
+      "demo": "",
+      "highlights": [
+        "Worked on bug fixing by performing root cause analysis and replicating scenarios to identify and resolve issues effectively within strict SLAs",
+        "Developed RESTful APIs for Reporting Module, Tax Audit Module, and Tax Compliance Module",
+        "Worked on User Management Module and Role Based Access Control Module",
+        "Developed Restful APIs for external integration with other systems like Banks, treasury, and other government departments"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "eTax – Uganda Revenue Authority (URA)",
+      "description": "eTax is a large-scale web-based tax administration system used by the Uganda Revenue Authority to handle taxpayer registration, return filing, assessments, and electronic payments. The system supports millions of taxpayers and enables end-to-end automation of tax workflows, integrating with banking systems, payment gateways, and URA’s internal revenue management modules.",
+      "technologies": [
+        "Java 11",
+        "Spring MVC",
+        "Struts (migration from)",
+        "REST APIs",
+        "Hibernate",
+        "Oracle Database",
+        "JSP",
+        "Tomcat, JBoss EAP",
+        "HTML, CSS & JavaScript"
+      ],
+      "category": [
+        "Spring MVC",
+        "REST APIs",
+        "Hibernate",
+        "Oracle Database"
+      ],
+      "github": "https://github.com/vishalnagvadiya/cloud-storage",
+      "demo": "",
+      "highlights": [
+        "Worked on major modules in technology migration from Struts to Spring MVC, focusing on the Payment and Return Filing workflows",
+        "Analyzed existing Struts actions, form beans, JSPs, and configuration files, and redesigned them into Spring MVC controllers, services, DTOs, and views",
+        "Optimized SQL and service calls, reducing page load and response time for payment verification and return submissions",
+        "Fixed production bugs and enhanced stability during the transition phase from legacy to modern architecture"
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Learn Java Programming",
+      "description": "An interactive, offline Java tutorial app by ApkZube covering basic to advanced Java, with over 500+ practice examples, interview questions, and an in-built compiler for running Java 8 code.",
+      "technologies": [
+        "Java 8",
+        "Android",
+        "Retrofit",
+        "XML",
+        "REST APIs"
+      ],
+      "category": [
+        "Android",
+        "REST APIs"
+      ],
+      "github": "https://github.com/vishalnagvadiya/blog-platform",
+      "demo": "",
+      "highlights": [
+        "Worked on creating Native Android UI, Navigation Drawer, Bottom Navigation, Bottom Sheet, Webview, Recyclerview, etc.",
+        "Implemented In-built compiler for running Java code",
+        "Implemented Caching, REST APIs, Multi-language support, and push notifications in the application"
+      ]
+    }
+  ],
+  "certifications": [
+    {
+      "id": 1,
+      "name": "AWS Cloud Architecture For Java Spring Boot Developers",
+      "issuer": "Udemy",
+      "date": "2025",
+      "credentialId": "UC-8ee2fba0-335e-44dc-9eec-f114a9994197",
+      "url": "https://www.udemy.com/certificate/UC-8ee2fba0-335e-44dc-9eec-f114a9994197/"
+    },
+    {
+      "id": 2,
+      "name": "Master Java Web Services and RESTful API with Spring Boot",
+      "issuer": "Udemy",
+      "date": "2022",
+      "credentialId": "UC-bef27fbd-8e33-4832-89fd-44bc2310b210",
+      "url": "https://www.udemy.com/certificate/UC-bef27fbd-8e33-4832-89fd-44bc2310b210/"
+    },
+    {
+      "id": 3,
+      "name": "Java Full Stack with Spring Boot and Angular",
+      "issuer": "Udemy",
+      "date": "2021",
+      "credentialId": "UC-c43f3eb3-3483-4e8b-8f55-e77beef6a485",
+      "url": "https://www.udemy.com/certificate/UC-c43f3eb3-3483-4e8b-8f55-e77beef6a485/"
+    }
+  ],
+  "education": [
+    {
+      "id": 1,
+      "degree": "Bachelor of Engineering in Computer Engineering",
+      "institution": "Gujarat Technological University",
+      "location": "Gujarat, India",
+      "duration": "2015 - 2019",
+      "grade": "7.70 CGPA"
+    }
+  ]
+}

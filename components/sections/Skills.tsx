@@ -16,52 +16,46 @@ import portfolioData from "@/data/portfolio.json";
 const Skills = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
-  const { skills } = portfolioData;
+  const { skills, sections } = portfolioData;
 
-  const skillCategories = [
-    {
-      title: "Backend Development",
-      skills: skills.backend,
+  const categoryConfig: Record<string, any> = {
+    backend: {
       icon: FiCode,
       gradient: "from-blue-500 to-cyan-500",
       bgGradient: "from-blue-50 to-cyan-50 dark:from-blue-900/20 dark:to-cyan-900/20"
     },
-    {
-      title: "Frontend Development",
-      skills: skills.frontend,
+    frontend: {
       icon: FiLayout,
       gradient: "from-green-500 to-emerald-500",
       bgGradient: "from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20"
     },
-    {
-      title: "Databases",
-      skills: skills.databases,
+    databases: {
       icon: FiDatabase,
       gradient: "from-purple-500 to-pink-500",
       bgGradient: "from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20"
     },
-    {
-      title: "Messaging & Streaming",
-      skills: skills.messaging,
+    messaging: {
       icon: FiSend,
       gradient: "from-orange-500 to-red-500",
       bgGradient: "from-orange-50 to-red-50 dark:from-orange-900/20 dark:to-red-900/20"
     },
-    {
-      title: "Cloud & DevOps",
-      skills: skills.cloud,
+    cloud: {
       icon: FiCloud,
       gradient: "from-cyan-500 to-blue-500",
       bgGradient: "from-cyan-50 to-blue-50 dark:from-cyan-900/20 dark:to-blue-900/20"
     },
-    {
-      title: "Tools & Others",
-      skills: skills.tools,
+    tools: {
       icon: FiTool,
       gradient: "from-pink-500 to-rose-500",
       bgGradient: "from-pink-50 to-rose-50 dark:from-pink-900/20 dark:to-rose-900/20"
-    },
-  ];
+    }
+  };
+
+  const skillCategories = sections.skills.categories.map((cat: any) => ({
+    title: cat.title,
+    skills: skills[cat.key as keyof typeof skills],
+    ...categoryConfig[cat.key]
+  }));
 
   return (
     <section id="skills" ref={ref} className="py-8 md:py-20 relative overflow-hidden">
@@ -78,16 +72,18 @@ const Skills = () => {
           <div className="flex items-center gap-4 mb-4">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 dark:text-white whitespace-nowrap">
               <span className="text-blue-500 dark:text-blue-400 font-mono text-lg md:text-2xl mr-2">03.</span>
-              Technical <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Skills</span>
+              <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                {sections.skills.title}
+              </span>
             </h2>
             <div className="h-px bg-slate-200 dark:bg-slate-700 flex-grow max-w-xs"></div>
           </div>
           <p className="text-base md:text-lg text-slate-600 dark:text-slate-400 mb-8 md:mb-16 max-w-4xl">
-            A comprehensive toolkit of technologies and frameworks I work with to build robust applications.
+            {sections.skills.description}
           </p>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {skillCategories.map((category, index) => {
+            {skillCategories.map((category: any, index: number) => {
               const IconComponent = category.icon;
               return (
                 <motion.div
@@ -109,7 +105,7 @@ const Skills = () => {
 
                   {/* Skills */}
                   <div className="flex flex-wrap gap-2">
-                    {category.skills.map((skill) => (
+                    {category.skills.map((skill: string) => (
                       <span
                         key={skill}
                         className="px-2 py-1 md:px-3 md:py-1.5 bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 rounded-lg text-xs md:text-sm font-medium hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors shadow-sm"

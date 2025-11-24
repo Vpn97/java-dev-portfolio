@@ -5,10 +5,18 @@ import portfolioData from "@/data/portfolio.json";
 import Magnetic from "@/components/ui/Magnetic";
 import Link from "next/link";
 import HeroBackground from "@/components/ui/HeroBackground";
-import { FiDownload, FiArrowRight, FiMail } from "react-icons/fi";
+import { FiDownload } from "react-icons/fi";
 
 const Hero = () => {
-  const { personal } = portfolioData;
+  const { personal, sections } = portfolioData;
+  const { hero } = sections;
+  const { codeWindow } = hero;
+
+  // Calculate delays based on content
+  const baseDelay = 0.8;
+  const skillsDelayStart = baseDelay + 0.2;
+  const skillsDuration = codeWindow.skills.length * 0.1;
+  const afterSkillsDelay = skillsDelayStart + skillsDuration;
 
   return (
     <section id="hero" className="relative min-h-screen w-full flex items-center justify-center overflow-hidden">
@@ -28,7 +36,7 @@ const Hero = () => {
             >
               <span className="px-3 py-1.5 md:px-4 md:py-2 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 text-blue-600 dark:text-blue-400 font-mono text-xs md:text-sm rounded-full inline-flex items-center gap-2">
                 <span className="text-base">👋</span>
-                <span>Hi, my name is</span>
+                <span>{hero.greeting}</span>
               </span>
             </motion.div>
 
@@ -48,23 +56,17 @@ const Hero = () => {
               className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight leading-tight"
             >
               <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
-                I build fast, scalable things for the web.
+                {hero.tagline}
               </span>
             </motion.h2>
 
-            <motion.p
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
               className="text-slate-600 dark:text-slate-400 text-sm md:text-base leading-relaxed max-w-xl"
-            >
-              I’m a Senior Software Engineer with <span className="text-blue-600 dark:text-blue-400 font-semibold">6+ Years</span> of experience in designing and developing cloud-ready,{" "}
-              <span className="text-purple-600 dark:text-purple-400 font-semibold">microservices-based applications</span> systems using Java 17, Spring Boot, Kafka, and modern DevOps practices. I love solving complex {" "}
-              <span className="text-cyan-600 dark:text-cyan-400 font-semibold">problems, improving performance, and creating high-impact</span> solutions for enterprises.
-              <br />
-              <br />
-              When I’m not coding, you’ll find me playing chess, watching sci-fi movies, or exploring amazing ideas and innovations.
-            </motion.p>
+              dangerouslySetInnerHTML={{ __html: hero.description.replace(/className=/g, 'class=') }}
+            />
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -80,7 +82,7 @@ const Hero = () => {
                   className="inline-flex items-center justify-center px-5 py-2.5 md:px-6 md:py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl font-medium hover:shadow-xl hover:shadow-blue-500/30 hover:scale-105 transition-all duration-300 text-sm group"
                 >
                   <FiDownload className="mr-2 group-hover:animate-bounce" size={16} />
-                  <span>Download CV</span>
+                  <span>{hero.buttons.cv}</span>
                 </a>
               </Magnetic>
 
@@ -89,7 +91,7 @@ const Hero = () => {
                   href="#projects"
                   className="inline-flex items-center justify-center px-5 py-2.5 md:px-6 md:py-3 bg-white dark:bg-slate-800 border-2 border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 rounded-xl font-medium hover:border-blue-500 dark:hover:border-blue-500 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300 text-sm group"
                 >
-                  <span>Check out my work!</span>
+                  <span>{hero.buttons.projects}</span>
                 </Link>
               </Magnetic>
 
@@ -98,7 +100,7 @@ const Hero = () => {
                   href="#contact"
                   className="inline-flex items-center justify-center px-5 py-2.5 md:px-6 md:py-3 text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition-all text-sm group"
                 >
-                  <span>Contact Me</span>
+                  <span>{hero.buttons.contact}</span>
                 </Link>
               </Magnetic>
             </motion.div>
@@ -120,7 +122,7 @@ const Hero = () => {
                   <div className="w-3 h-3 rounded-full bg-green-500 hover:bg-green-400 transition-colors cursor-pointer"></div>
                 </div>
                 <div className="flex items-center gap-2">
-                  <div className="text-xs text-slate-400 font-mono">Developer.java</div>
+                  <div className="text-xs text-slate-400 font-mono">{codeWindow.file}</div>
                   <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
                 </div>
               </div>
@@ -130,47 +132,36 @@ const Hero = () => {
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
-                  transition={{ duration: 0.3, delay: 0.8 }}
+                  transition={{ duration: 0.3, delay: baseDelay }}
                   className="text-slate-300"
                 >
-                  <span className="text-purple-400">public class</span> <span className="text-yellow-300">Vishal</span> <span className="text-purple-400">extends</span> <span className="text-yellow-300">Developer</span> {"{"}
+                  <span className="text-purple-400">public class</span> <span className="text-yellow-300">{codeWindow.class}</span> <span className="text-purple-400">extends</span> <span className="text-yellow-300">{codeWindow.extends}</span> {"{"}
                 </motion.div>
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
-                  transition={{ duration: 0.3, delay: 0.9 }}
+                  transition={{ duration: 0.3, delay: baseDelay + 0.1 }}
                   className="pl-4 text-slate-300"
                 >
                   <span className="text-purple-400">private</span> String[] skills = {"{"}
                 </motion.div>
+
+                {codeWindow.skills.map((line: string, index: number) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.3, delay: skillsDelayStart + (index * 0.1) }}
+                    className="pl-8 text-green-400"
+                  >
+                    {line}
+                  </motion.div>
+                ))}
+
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
-                  transition={{ duration: 0.3, delay: 1.0 }}
-                  className="pl-8 text-green-400"
-                >
-                  "Java 17", "Spring Boot",
-                </motion.div>
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ duration: 0.3, delay: 1.1 }}
-                  className="pl-8 text-green-400"
-                >
-                  "Microservices", "Kafka",
-                </motion.div>
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ duration: 0.3, delay: 1.2 }}
-                  className="pl-8 text-green-400"
-                >
-                  "AWS", "Docker", "K8s"
-                </motion.div>
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ duration: 0.3, delay: 1.3 }}
+                  transition={{ duration: 0.3, delay: afterSkillsDelay }}
                   className="pl-4 text-slate-300"
                 >
                   {"};"}
@@ -179,15 +170,15 @@ const Hero = () => {
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
-                  transition={{ duration: 0.3, delay: 1.4 }}
+                  transition={{ duration: 0.3, delay: afterSkillsDelay + 0.1 }}
                   className="pl-4 text-slate-300"
                 >
-                  <span className="text-purple-400">public void</span> <span className="text-blue-400">buildFuture</span>() {"{"}
+                  <span className="text-purple-400">public void</span> <span className="text-blue-400">{codeWindow.methods.buildFuture}</span>() {"{"}
                 </motion.div>
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
-                  transition={{ duration: 0.3, delay: 1.5 }}
+                  transition={{ duration: 0.3, delay: afterSkillsDelay + 0.2 }}
                   className="pl-8 text-slate-300"
                 >
                   <span className="text-purple-400">while</span>(alive) {"{"}
@@ -195,31 +186,31 @@ const Hero = () => {
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
-                  transition={{ duration: 0.3, delay: 1.6 }}
+                  transition={{ duration: 0.3, delay: afterSkillsDelay + 0.3 }}
                   className="pl-12 text-slate-300"
                 >
-                  eat();
+                  {codeWindow.methods.eat}();
                 </motion.div>
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
-                  transition={{ duration: 0.3, delay: 1.7 }}
+                  transition={{ duration: 0.3, delay: afterSkillsDelay + 0.4 }}
                   className="pl-12 text-slate-300"
                 >
-                  sleep();
+                  {codeWindow.methods.sleep}();
                 </motion.div>
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
-                  transition={{ duration: 0.3, delay: 1.8 }}
+                  transition={{ duration: 0.3, delay: afterSkillsDelay + 0.5 }}
                   className="pl-12 text-slate-300"
                 >
-                  <span className="text-blue-400">code</span>();
+                  <span className="text-blue-400">{codeWindow.methods.code}</span>();
                 </motion.div>
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
-                  transition={{ duration: 0.3, delay: 1.9 }}
+                  transition={{ duration: 0.3, delay: afterSkillsDelay + 0.6 }}
                   className="pl-8 text-slate-300"
                 >
                   {"}"}
@@ -227,7 +218,7 @@ const Hero = () => {
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
-                  transition={{ duration: 0.3, delay: 2.0 }}
+                  transition={{ duration: 0.3, delay: afterSkillsDelay + 0.7 }}
                   className="pl-4 text-slate-300"
                 >
                   {"}"}
@@ -235,7 +226,7 @@ const Hero = () => {
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
-                  transition={{ duration: 0.3, delay: 2.1 }}
+                  transition={{ duration: 0.3, delay: afterSkillsDelay + 0.8 }}
                   className="text-slate-300"
                 >
                   {"}"}
@@ -246,7 +237,7 @@ const Hero = () => {
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: [0, 1, 0] }}
-                transition={{ duration: 1, repeat: Infinity, delay: 2.2 }}
+                transition={{ duration: 1, repeat: Infinity, delay: afterSkillsDelay + 1.0 }}
                 className="absolute bottom-6 right-6 w-2 h-4 bg-blue-400"
               ></motion.div>
             </div>

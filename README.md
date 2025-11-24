@@ -86,7 +86,12 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ### Update Your Information
 
-Edit `data/portfolio.json` with your details:
+Edit `data/portfolio.json` with your details. This file contains all the content for your portfolio, including:
+
+- **Personal Info**: Name, role, email, social links.
+- **Sections**: Content for Hero, About, Experience, Skills, Projects, Certifications, and Contact.
+
+Example structure:
 
 ```json
 {
@@ -95,6 +100,18 @@ Edit `data/portfolio.json` with your details:
     "role": "Your Role",
     "email": "your.email@example.com",
     "summary": "Your professional summary..."
+  },
+  "sections": {
+    "hero": {
+      "greeting": "Hi, my name is",
+      "tagline": "I build things for the web.",
+      ...
+    },
+    "about": { ... },
+    "experience": { ... },
+    "skills": { ... },
+    "projects": { ... },
+    "contact": { ... }
   }
 }
 ```

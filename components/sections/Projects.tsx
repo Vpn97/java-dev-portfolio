@@ -20,7 +20,7 @@ interface Project {
 const Projects = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
-  const { projects } = portfolioData;
+  const { projects, sections } = portfolioData;
 
   const [selectedFilter, setSelectedFilter] = useState("All");
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
@@ -154,7 +154,7 @@ const Projects = () => {
         {filteredProjects.length === 0 && (
           <div className="text-center py-12">
             <p className="text-slate-600 dark:text-slate-400 text-lg">
-              No projects found for this category.
+              {sections.projects.labels.notFound}
             </p>
           </div>
         )}
@@ -200,7 +200,7 @@ const Projects = () => {
               <div className="p-6 space-y-8">
                 {/* Description */}
                 <div>
-                  <h4 className="text-lg font-semibold text-slate-900 dark:text-white mb-3">Overview</h4>
+                  <h4 className="text-lg font-semibold text-slate-900 dark:text-white mb-3">{sections.projects.labels.overview}</h4>
                   <p className="text-slate-600 dark:text-slate-300 leading-relaxed text-sm md:text-base">
                     {selectedProject.description}
                   </p>
@@ -208,7 +208,7 @@ const Projects = () => {
 
                 {/* Technologies */}
                 <div>
-                  <h4 className="text-lg font-semibold text-slate-900 dark:text-white mb-3">Technologies Used</h4>
+                  <h4 className="text-lg font-semibold text-slate-900 dark:text-white mb-3">{sections.projects.labels.technologies}</h4>
                   <div className="flex flex-wrap gap-2">
                     {selectedProject.technologies.map((tech) => (
                       <span
@@ -224,7 +224,7 @@ const Projects = () => {
                 {/* Highlights */}
                 {selectedProject.highlights && selectedProject.highlights.length > 0 && (
                   <div>
-                    <h4 className="text-lg font-semibold text-slate-900 dark:text-white mb-3">Key Features & Achievements</h4>
+                    <h4 className="text-lg font-semibold text-slate-900 dark:text-white mb-3">{sections.projects.labels.highlights}</h4>
                     <ul className="grid md:grid-cols-2 gap-4">
                       {selectedProject.highlights.map((highlight, idx) => (
                         <li key={idx} className="flex items-start gap-3 text-slate-600 dark:text-slate-300 text-sm md:text-base">
@@ -246,7 +246,7 @@ const Projects = () => {
                       className="inline-flex items-center gap-2 px-6 py-3 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-xl font-medium hover:opacity-90 transition-opacity"
                     >
                       <FiGithub size={20} />
-                      View Source
+                      {sections.projects.labels.viewSource}
                     </a>
                   )}
                   {selectedProject.demo && (
@@ -257,7 +257,7 @@ const Projects = () => {
                       className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-xl font-medium hover:bg-blue-700 transition-colors shadow-lg shadow-blue-500/20"
                     >
                       <FiExternalLink size={20} />
-                      Live Demo
+                      {sections.projects.labels.liveDemo}
                     </a>
                   )}
                 </div>

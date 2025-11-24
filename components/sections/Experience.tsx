@@ -9,7 +9,7 @@ import portfolioData from "@/data/portfolio.json";
 const Experience = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
-  const { experience } = portfolioData;
+  const { experience, sections } = portfolioData;
 
   return (
     <section id="experience" ref={ref} className="py-8 md:py-20 max-w-[90%] mx-auto px-4 sm:px-6 lg:px-8 relative overflow-hidden">
@@ -85,7 +85,7 @@ const Experience = () => {
                 <div className="mb-6">
                   <h4 className="font-bold text-slate-900 dark:text-white mb-3 flex items-center gap-2">
                     <span className="w-2 h-2 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full"></span>
-                    Key Achievements & Responsibilities
+                    {sections.experience.labels.responsibilities}
                   </h4>
                   <ul className="grid md:grid-cols-2 gap-3">
                     {exp.responsibilities.map((resp, idx) => (
@@ -100,7 +100,7 @@ const Experience = () => {
                 {/* Technologies */}
                 <div>
                   <h4 className="font-bold text-slate-900 dark:text-white mb-3 text-sm uppercase tracking-wide">
-                    Technologies Used
+                    {sections.experience.labels.technologies}
                   </h4>
                   <div className="flex flex-wrap gap-2">
                     {exp.technologies.map((tech) => (

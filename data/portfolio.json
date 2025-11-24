@@ -419,5 +419,152 @@
       "duration": "2015 - 2019",
       "grade": "7.70 CGPA"
     }
-  ]
+  ],
+  "sections": {
+    "header": {
+      "logo": "VN",
+      "navItems": [
+        {
+          "name": "About",
+          "href": "#about"
+        },
+        {
+          "name": "Skills",
+          "href": "#skills"
+        },
+        {
+          "name": "Experience",
+          "href": "#experience"
+        },
+        {
+          "name": "Projects",
+          "href": "#projects"
+        },
+        {
+          "name": "Certifications",
+          "href": "#certifications"
+        },
+        {
+          "name": "Contact",
+          "href": "#contact"
+        }
+      ]
+    },
+    "hero": {
+      "greeting": "Hi, my name is",
+      "tagline": "I build things for the web.",
+      "description": "Senior Software Engineer with <span className=\"text-blue-600 dark:text-blue-400 font-semibold\">6+ Years</span> hands-on experience in designing, developing, and deploying scalable <span className=\"text-purple-600 dark:text-purple-400 font-semibold\">microservices-based applications</span>. Specialized in Java 17, Spring Boot, REST APIs, Apache Kafka, JPA/Hibernate, and multi-database integrations. Proven track record in building enterprise-grade systems, optimizing performance, leading teams, and delivering high-impact solutions for government and enterprise clients. Strong expertise in <span className=\"text-cyan-600 dark:text-cyan-400 font-semibold\">DevOps practices</span>, cloud technologies, and end-to-end software development lifecycle.",
+      "buttons": {
+        "cv": "Download CV",
+        "projects": "Check out my work!",
+        "contact": "Contact Me"
+      },
+      "codeWindow": {
+        "file": "Developer.java",
+        "class": "Vishal",
+        "extends": "Developer",
+        "skills": [
+          "\"Java 17\", \"Spring Boot\",",
+          "\"Microservices\", \"Kafka\",",
+          "\"AWS\", \"Docker\", \"K8s\""
+        ],
+        "methods": {
+          "buildFuture": "buildFuture",
+          "eat": "eat",
+          "sleep": "sleep",
+          "code": "code"
+        }
+      }
+    },
+    "about": {
+      "title": "About Me",
+      "intro": "Hello! I'm {name}, a software developer based in <span className=\"text-blue-500 dark:text-blue-400\">{location}</span>. I enjoy creating things that live on the internet, whether that be websites, applications, or anything in between.",
+      "educationIntro": "I graduated from {institution} with a degree in {degree}, where I developed a strong foundation in computer science and software engineering principles.",
+      "skillsIntro": "Here are a few technologies I've been working with recently:",
+      "recentSkills": [
+        "Java & Spring Boot",
+        "Angular 15+",
+        "Hibernate & JPA",
+        "Microservices Architecture",
+        "EHCache & Redis",
+        "PostgreSQL, MySQL & MongoDB",
+        "Apache Kafka & Keycloak",
+        "Kong API Gateway",
+        "AWS, Jenkins (CI-CD) & Docker"
+      ],
+      "image": "/data/profile_photo.JPG"
+    },
+    "experience": {
+      "title": "Work Experience",
+      "description": "My professional journey and the impact I've made across different organizations.",
+      "labels": {
+        "responsibilities": "Key Achievements & Responsibilities",
+        "technologies": "Technologies Used"
+      }
+    },
+    "skills": {
+      "title": "Technical Skills",
+      "description": "A comprehensive toolkit of technologies I've mastered over the years.",
+      "categories": [
+        {
+          "key": "backend",
+          "title": "Backend Development"
+        },
+        {
+          "key": "frontend",
+          "title": "Frontend Development"
+        },
+        {
+          "key": "databases",
+          "title": "Databases"
+        },
+        {
+          "key": "messaging",
+          "title": "Messaging & Streaming"
+        },
+        {
+          "key": "cloud",
+          "title": "Cloud & DevOps"
+        },
+        {
+          "key": "tools",
+          "title": "Tools & Others"
+        }
+      ]
+    },
+    "projects": {
+      "title": "Featured Projects",
+      "description": "A selection of projects that showcase my technical expertise and problem-solving abilities.",
+      "labels": {
+        "overview": "Overview",
+        "technologies": "Technologies Used",
+        "highlights": "Key Features & Achievements",
+        "viewSource": "View Source",
+        "liveDemo": "Live Demo",
+        "notFound": "No projects found for this category."
+      }
+    },
+    "certifications": {
+      "title": "Certifications & Awards",
+      "description": "Professional certifications that validate my expertise and commitment to continuous learning."
+    },
+    "contact": {
+      "title": "Contact Me",
+      "description": "I'm currently open to new opportunities. Whether you have a question or just want to say hi, I'll try my best to get back to you!",
+      "cta": "Say Hello",
+      "labels": {
+        "getInTouch": "Get In Touch",
+        "intro": "Feel free to reach out for collaborations, opportunities, or just a friendly chat!",
+        "email": "Email",
+        "connect": "Connect on Social",
+        "name": "Your Name",
+        "namePlaceholder": "John Doe",
+        "emailLabel": "Your Email",
+        "emailPlaceholder": "john@example.com",
+        "message": "Your Message",
+        "messagePlaceholder": "Tell me about your project...",
+        "sending": "Opening your email client..."
+      }
+    }
+  }
 }

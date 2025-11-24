@@ -65,10 +65,12 @@ server {
 EOF
 
 # Backup the default config
+echo -e "${GREEN}Backing up production configuration...${NC}"
 mv nginx/conf.d/default.conf nginx/conf.d/default.conf.backup
 
 # Start nginx with temporary config
 echo -e "${GREEN}Starting Nginx for certificate generation...${NC}"
+docker-compose down
 docker-compose up -d nginx
 
 # Wait for nginx to start properly
@@ -78,12 +80,14 @@ sleep 10
 # Test if nginx is responding
 echo -e "${GREEN}Testing Nginx...${NC}"
 HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" http://localhost/ || echo "000")
-if [ "$HTTP_CODE" != "200" ]; then
+if [ "$HTTP_CODE" != "200" ] && [ "$HTTP_CODE" != "301" ]; then
     echo -e "${RED}Nginx is not responding properly (HTTP $HTTP_CODE)${NC}"
     echo -e "${YELLOW}Check logs: docker-compose logs nginx${NC}"
+    # Restore config
+    mv nginx/conf.d/default.conf.backup nginx/conf.d/default.conf
     exit 1
 fi
-echo -e "${GREEN}Nginx is ready${NC}"
+echo -e "${GREEN}Nginx is ready (HTTP $HTTP_CODE)${NC}"
 
 # Request certificate
 echo -e "${GREEN}Requesting SSL certificate from Let's Encrypt...${NC}"

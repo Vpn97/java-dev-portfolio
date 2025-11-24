@@ -38,7 +38,7 @@ const Projects = () => {
       : projects.filter((project) => project.category.includes(selectedFilter));
 
   return (
-    <section id="projects" ref={ref} className="py-20 max-w-[90%] mx-auto px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+    <section id="projects" ref={ref} className="py-8 md:py-20 max-w-[90%] mx-auto px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       {/* Background Decoration */}
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-gradient-to-br from-green-400/5 to-emerald-400/5 rounded-full blur-3xl -z-10"></div>
       <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-gradient-to-tr from-blue-400/5 to-purple-400/5 rounded-full blur-3xl -z-10"></div>
@@ -48,12 +48,15 @@ const Projects = () => {
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
         transition={{ duration: 0.5 }}
       >
-        <div className="mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4">
-            Featured <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Projects</span>
-          </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mb-4"></div>
-          <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl">
+        <div className="mb-8 md:mb-12">
+          <div className="flex items-center gap-4 mb-4">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 dark:text-white whitespace-nowrap">
+              <span className="text-blue-500 dark:text-blue-400 font-mono text-lg md:text-2xl mr-2">04.</span>
+              Featured <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Projects</span>
+            </h2>
+            <div className="h-px bg-slate-200 dark:bg-slate-700 flex-grow max-w-xs"></div>
+          </div>
+          <p className="text-base md:text-lg text-slate-600 dark:text-slate-400 max-w-4xl">
             A selection of projects showcasing my expertise in building scalable, production-ready applications.
           </p>
         </div>
@@ -129,13 +132,13 @@ const Projects = () => {
                   {project.technologies.slice(0, 3).map((tech) => (
                     <span
                       key={tech}
-                      className="px-3 py-1 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-lg text-xs font-medium border border-slate-200 dark:border-slate-700"
+                      className="px-2 py-0.5 md:px-3 md:py-1 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-lg text-xs font-medium border border-slate-200 dark:border-slate-700"
                     >
                       {tech}
                     </span>
                   ))}
                   {project.technologies.length > 3 && (
-                    <span className="px-3 py-1 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-lg text-xs font-medium border border-slate-200 dark:border-slate-700">
+                    <span className="px-2 py-0.5 md:px-3 md:py-1 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-lg text-xs font-medium border border-slate-200 dark:border-slate-700">
                       +{project.technologies.length - 3}
                     </span>
                   )}
@@ -198,7 +201,7 @@ const Projects = () => {
                 {/* Description */}
                 <div>
                   <h4 className="text-lg font-semibold text-slate-900 dark:text-white mb-3">Overview</h4>
-                  <p className="text-slate-600 dark:text-slate-300 leading-relaxed text-lg">
+                  <p className="text-slate-600 dark:text-slate-300 leading-relaxed text-sm md:text-base">
                     {selectedProject.description}
                   </p>
                 </div>
@@ -210,7 +213,7 @@ const Projects = () => {
                     {selectedProject.technologies.map((tech) => (
                       <span
                         key={tech}
-                        className="px-4 py-2 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-lg text-sm font-medium border border-slate-200 dark:border-slate-700"
+                        className="px-2 py-1 md:px-3 md:py-1.5 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-lg text-xs md:text-sm font-medium border border-slate-200 dark:border-slate-700"
                       >
                         {tech}
                       </span>
@@ -224,7 +227,7 @@ const Projects = () => {
                     <h4 className="text-lg font-semibold text-slate-900 dark:text-white mb-3">Key Features & Achievements</h4>
                     <ul className="grid md:grid-cols-2 gap-4">
                       {selectedProject.highlights.map((highlight, idx) => (
-                        <li key={idx} className="flex items-start gap-3 text-slate-600 dark:text-slate-300">
+                        <li key={idx} className="flex items-start gap-3 text-slate-600 dark:text-slate-300 text-sm md:text-base">
                           <span className="text-blue-600 dark:text-blue-400 mt-1.5 flex-shrink-0">▸</span>
                           <span>{highlight}</span>
                         </li>

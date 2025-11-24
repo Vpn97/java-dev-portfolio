@@ -12,7 +12,7 @@ const Experience = () => {
   const { experience } = portfolioData;
 
   return (
-    <section id="experience" ref={ref} className="py-20 max-w-[90%] mx-auto px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+    <section id="experience" ref={ref} className="py-8 md:py-20 max-w-[90%] mx-auto px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       {/* Background Decoration */}
       <div className="absolute top-20 left-0 w-96 h-96 bg-gradient-to-br from-blue-400/5 to-cyan-400/5 rounded-full blur-3xl -z-10"></div>
       <div className="absolute bottom-20 right-0 w-96 h-96 bg-gradient-to-tr from-purple-400/5 to-pink-400/5 rounded-full blur-3xl -z-10"></div>
@@ -22,12 +22,15 @@ const Experience = () => {
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
         transition={{ duration: 0.5 }}
       >
-        <div className="mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4">
-            Work <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Experience</span>
-          </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mb-4"></div>
-          <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl">
+        <div className="mb-8 md:mb-16">
+          <div className="flex items-center gap-4 mb-4">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 dark:text-white whitespace-nowrap">
+              <span className="text-blue-500 dark:text-blue-400 font-mono text-lg md:text-2xl mr-2">02.</span>
+              Work <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Experience</span>
+            </h2>
+            <div className="h-px bg-slate-200 dark:bg-slate-700 flex-grow max-w-xs"></div>
+          </div>
+          <p className="text-base md:text-lg text-slate-600 dark:text-slate-400 max-w-4xl">
             My professional journey and the impact I've made across different organizations.
           </p>
         </div>
@@ -74,7 +77,7 @@ const Experience = () => {
                 </div>
 
                 {/* Description */}
-                <p className="text-slate-700 dark:text-slate-300 mb-6 text-lg">
+                <p className="text-slate-700 dark:text-slate-300 mb-6 text-sm md:text-base">
                   {exp.description}
                 </p>
 
@@ -86,7 +89,7 @@ const Experience = () => {
                   </h4>
                   <ul className="grid md:grid-cols-2 gap-3">
                     {exp.responsibilities.map((resp, idx) => (
-                      <li key={idx} className="flex items-start gap-2 text-slate-600 dark:text-slate-400">
+                      <li key={idx} className="flex items-start gap-2 text-slate-600 dark:text-slate-400 text-sm md:text-base">
                         <span className="text-blue-600 dark:text-blue-400 mt-1.5">▸</span>
                         <span>{resp}</span>
                       </li>
@@ -103,7 +106,7 @@ const Experience = () => {
                     {exp.technologies.map((tech) => (
                       <span
                         key={tech}
-                        className="px-4 py-2 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-lg text-sm font-medium shadow-sm hover:shadow-md hover:scale-105 transition-all duration-200 border border-slate-200 dark:border-slate-700"
+                        className="px-3 py-1.5 md:px-4 md:py-2 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-lg text-xs md:text-sm font-medium shadow-sm hover:shadow-md hover:scale-105 transition-all duration-200 border border-slate-200 dark:border-slate-700"
                       >
                         {tech}
                       </span>

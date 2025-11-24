@@ -12,7 +12,7 @@ const Certifications = () => {
   const { certifications } = portfolioData;
 
   return (
-    <section id="certifications" ref={ref} className="py-20 max-w-[90%] mx-auto px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+    <section id="certifications" ref={ref} className="py-8 md:py-20 max-w-[90%] mx-auto px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       {/* Background Decoration */}
       <div className="absolute top-20 left-0 w-96 h-96 bg-gradient-to-br from-blue-400/5 to-cyan-400/5 rounded-full blur-3xl -z-10"></div>
       <div className="absolute bottom-20 right-0 w-96 h-96 bg-gradient-to-tr from-purple-400/5 to-pink-400/5 rounded-full blur-3xl -z-10"></div>
@@ -21,12 +21,15 @@ const Certifications = () => {
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
         transition={{ duration: 0.5 }}
       >
-        <div className="mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4">
-            Certifications <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">& Awards</span>
-          </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mb-4"></div>
-          <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl">
+        <div className="mb-8 md:mb-16">
+          <div className="flex items-center gap-4 mb-4">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 dark:text-white whitespace-nowrap">
+              <span className="text-blue-500 dark:text-blue-400 font-mono text-lg md:text-2xl mr-2">05.</span>
+              Certifications <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">& Awards</span>
+            </h2>
+            <div className="h-px bg-slate-200 dark:bg-slate-700 flex-grow max-w-xs"></div>
+          </div>
+          <p className="text-base md:text-lg text-slate-600 dark:text-slate-400 max-w-4xl">
             Professional certifications and achievements that validate my technical expertise.
           </p>
         </div>

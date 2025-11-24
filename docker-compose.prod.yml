@@ -1,8 +1,6 @@
 # Docker Production Configuration
 # This file contains production-specific Docker Compose settings
 
-version: '3.8'
-
 services:
   nextjs:
     restart: always

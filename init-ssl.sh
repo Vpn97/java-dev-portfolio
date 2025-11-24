@@ -71,10 +71,23 @@ mv nginx/conf.d/default.conf nginx/conf.d/default.conf.backup
 echo -e "${GREEN}Starting Nginx for certificate generation...${NC}"
 docker-compose up -d nginx
 
-# Wait for nginx to start
-sleep 5
+# Wait for nginx to start properly
+echo -e "${YELLOW}Waiting for Nginx to start...${NC}"
+sleep 10
+
+# Test if nginx is responding
+echo -e "${GREEN}Testing Nginx...${NC}"
+HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" http://localhost/ || echo "000")
+if [ "$HTTP_CODE" != "200" ]; then
+    echo -e "${RED}Nginx is not responding properly (HTTP $HTTP_CODE)${NC}"
+    echo -e "${YELLOW}Check logs: docker-compose logs nginx${NC}"
+    exit 1
+fi
+echo -e "${GREEN}Nginx is ready${NC}"
 
 # Request certificate
+echo -e "${GREEN}Requesting SSL certificate from Let's Encrypt...${NC}"
+echo -e "${YELLOW}This may take a few minutes...${NC}"
 
 docker-compose run --rm certbot certonly \
     --webroot \
@@ -82,28 +95,53 @@ docker-compose run --rm certbot certonly \
     --email ${EMAIL} \
     --agree-tos \
     --no-eff-email \
+    --force-renewal \
     -d ${DOMAIN}
 
-# Check if certificate was obtained
-if [ $? -eq 0 ]; then
+CERT_EXIT_CODE=$?
+
+# Check if certificate was actually created
+if [ -f "certbot/conf/live/${DOMAIN}/fullchain.pem" ] && [ $CERT_EXIT_CODE -eq 0 ]; then
     echo -e "${GREEN}Certificate obtained successfully!${NC}"
     
     # Restore the default config
-    rm nginx/conf.d/temp.conf
+    echo -e "${GREEN}Restoring production configuration...${NC}"
+    rm -f nginx/conf.d/temp.conf
     mv nginx/conf.d/default.conf.backup nginx/conf.d/default.conf
     
-    # Restart nginx with SSL config
-    echo -e "${GREEN}Restarting Nginx with SSL configuration...${NC}"
-    docker-compose restart nginx
+    # Start all services with proper configuration
+    echo -e "${GREEN}Starting all services...${NC}"
+    docker-compose down
+    docker-compose up -d
+    
+    # Wait for services to start
+    echo -e "${YELLOW}Waiting for services to start...${NC}"
+    sleep 15
     
     echo ""
     echo -e "${GREEN}=== Setup Complete ===${NC}"
     echo -e "${GREEN}Your application is now running with HTTPS!${NC}"
+    echo ""
     echo -e "${YELLOW}Access your site at: https://${DOMAIN}${NC}"
+    echo -e "${YELLOW}Health check: https://${DOMAIN}/health${NC}"
+    echo ""
+    echo -e "${GREEN}Checking service status...${NC}"
+    docker-compose ps
+    echo ""
+    echo -e "${YELLOW}If you see 'OK' instead of your portfolio, wait 30 seconds and refresh${NC}"
 else
     echo -e "${RED}Failed to obtain certificate${NC}"
+    echo -e "${YELLOW}Certificate file not found or certbot failed${NC}"
     echo -e "${YELLOW}Restoring original configuration...${NC}"
-    rm nginx/conf.d/temp.conf
-    mv nginx/conf.d/default.conf.backup nginx/conf.d/default.conf
+    rm -f nginx/conf.d/temp.conf
+    if [ -f nginx/conf.d/default.conf.backup ]; then
+        mv nginx/conf.d/default.conf.backup nginx/conf.d/default.conf
+    fi
+    echo ""
+    echo -e "${RED}Troubleshooting:${NC}"
+    echo "1. Check if your domain DNS is pointing to this server"
+    echo "2. Check if ports 80 and 443 are open"
+    echo "3. View certbot logs: docker-compose logs certbot"
+    echo "4. Try again in a few minutes"
     exit 1
 fi

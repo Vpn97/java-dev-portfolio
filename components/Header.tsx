@@ -6,12 +6,14 @@ import Link from "next/link";
 import { FiSun, FiMoon, FiMenu, FiX } from "react-icons/fi";
 import { motion, AnimatePresence } from "framer-motion";
 import Magnetic from "@/components/ui/Magnetic";
+import portfolioData from "@/data/portfolio.json";
 
 const Header = () => {
   const [mounted, setMounted] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const { theme, setTheme } = useTheme();
+  const { sections } = portfolioData as any; // Type assertion to avoid temporary TS errors if types aren't updated yet
 
   useEffect(() => {
     setMounted(true);
@@ -24,14 +26,7 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navItems = [
-    { name: "About", href: "#about" },
-    { name: "Skills", href: "#skills" },
-    { name: "Experience", href: "#experience" },
-    { name: "Projects", href: "#projects" },
-    { name: "Certifications", href: "#certifications" },
-    { name: "Contact", href: "#contact" },
-  ];
+  const navItems = sections?.header?.navItems || [];
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
@@ -46,14 +41,14 @@ const Header = () => {
           <Link href="/" className="group relative z-50">
             <Magnetic>
               <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent inline-block">
-                VN
+                {sections?.header?.logo || "VN"}
               </span>
             </Magnetic>
           </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-2">
-            {navItems.map((item) => (
+            {navItems.map((item: any) => (
               <Magnetic key={item.name}>
                 <Link
                   href={item.href}
@@ -104,7 +99,7 @@ const Header = () => {
               className="fixed inset-0 bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl md:hidden z-40 flex items-center justify-center"
             >
               <div className="flex flex-col items-center space-y-6">
-                {navItems.map((item) => (
+                {navItems.map((item: any) => (
                   <Link
                     key={item.name}
                     href={item.href}

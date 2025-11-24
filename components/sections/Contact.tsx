@@ -9,7 +9,7 @@ import portfolioData from "@/data/portfolio.json";
 const Contact = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
-  const { personal } = portfolioData;
+  const { personal, sections } = portfolioData;
 
   const [formData, setFormData] = useState({
     name: "",
@@ -36,7 +36,7 @@ const Contact = () => {
 
     window.location.href = `mailto:${personal.email}?subject=${subject}&body=${body}`;
 
-    setStatus("Opening your email client...");
+    setStatus(sections.contact.labels.sending);
 
     setTimeout(() => {
       setFormData({ name: "", email: "", message: "" });
@@ -60,12 +60,14 @@ const Contact = () => {
             <div className="flex items-center gap-4 mb-4">
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 dark:text-white whitespace-nowrap">
                 <span className="text-blue-500 dark:text-blue-400 font-mono text-lg md:text-2xl mr-2">06.</span>
-                Let's <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Connect</span>
+                <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                  {sections.contact.title}
+                </span>
               </h2>
               <div className="h-px bg-slate-200 dark:bg-slate-700 flex-grow max-w-xs"></div>
             </div>
             <p className="text-base md:text-lg text-slate-600 dark:text-slate-400 max-w-4xl">
-              I'm currently open to new opportunities and collaborations. Let's build something amazing together!
+              {sections.contact.description}
             </p>
           </div>
 
@@ -73,10 +75,10 @@ const Contact = () => {
             {/* Contact Info */}
             <div>
               <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-6">
-                Get In Touch
+                {sections.contact.labels.getInTouch}
               </h3>
               <p className="text-slate-600 dark:text-slate-400 mb-8">
-                Feel free to reach out for collaborations, opportunities, or just a friendly chat!
+                {sections.contact.labels.intro}
               </p>
 
               {/* Contact Details */}
@@ -89,7 +91,7 @@ const Contact = () => {
                     <FiMail className="text-white" size={20} />
                   </div>
                   <div>
-                    <p className="text-sm text-slate-500 dark:text-slate-400">Email</p>
+                    <p className="text-sm text-slate-500 dark:text-slate-400">{sections.contact.labels.email}</p>
                     <p className="font-semibold text-slate-900 dark:text-white">{personal.email}</p>
                   </div>
                 </a>
@@ -97,7 +99,7 @@ const Contact = () => {
 
               {/* Social Links */}
               <div>
-                <h4 className="font-semibold text-slate-900 dark:text-white mb-4">Connect on Social</h4>
+                <h4 className="font-semibold text-slate-900 dark:text-white mb-4">{sections.contact.labels.connect}</h4>
                 <div className="flex gap-4">
                   {personal.social.github && (
                     <a
@@ -134,7 +136,7 @@ const Contact = () => {
                     htmlFor="name"
                     className="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2"
                   >
-                    Your Name
+                    {sections.contact.labels.name}
                   </label>
                   <div className="relative">
                     <FiUser className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" size={20} />
@@ -146,7 +148,7 @@ const Contact = () => {
                       onChange={handleChange}
                       required
                       className="w-full pl-12 pr-4 py-4 bg-white/50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-xl focus:ring-2 focus:ring-blue-600 focus:border-transparent outline-none transition-all text-slate-900 dark:text-white placeholder:text-slate-400 backdrop-blur-sm"
-                      placeholder="John Doe"
+                      placeholder={sections.contact.labels.namePlaceholder}
                     />
                   </div>
                 </div>
@@ -157,7 +159,7 @@ const Contact = () => {
                     htmlFor="email"
                     className="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2"
                   >
-                    Your Email
+                    {sections.contact.labels.emailLabel}
                   </label>
                   <div className="relative">
                     <FiMail className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" size={20} />
@@ -169,7 +171,7 @@ const Contact = () => {
                       onChange={handleChange}
                       required
                       className="w-full pl-12 pr-4 py-3 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl focus:ring-2 focus:ring-blue-600 focus:border-transparent outline-none transition-all text-slate-900 dark:text-white"
-                      placeholder="john@example.com"
+                      placeholder={sections.contact.labels.emailPlaceholder}
                     />
                   </div>
                 </div>
@@ -180,7 +182,7 @@ const Contact = () => {
                     htmlFor="message"
                     className="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2"
                   >
-                    Your Message
+                    {sections.contact.labels.message}
                   </label>
                   <div className="relative">
                     <FiMessageSquare className="absolute left-4 top-4 text-slate-400" size={20} />
@@ -192,7 +194,7 @@ const Contact = () => {
                       required
                       rows={5}
                       className="w-full pl-12 pr-4 py-3 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl focus:ring-2 focus:ring-blue-600 focus:border-transparent outline-none transition-all resize-none text-slate-900 dark:text-white"
-                      placeholder="Tell me about your project..."
+                      placeholder={sections.contact.labels.messagePlaceholder}
                     ></textarea>
                   </div>
                 </div>
@@ -203,7 +205,7 @@ const Contact = () => {
                   className="w-full px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white rounded-xl font-semibold transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl hover:scale-105"
                 >
                   <FiSend size={20} />
-                  Send Message
+                  {sections.contact.cta}
                 </button>
 
                 {status && (

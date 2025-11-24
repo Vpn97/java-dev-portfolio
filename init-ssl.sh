@@ -92,6 +92,12 @@ echo -e "${GREEN}Nginx is ready (HTTP $HTTP_CODE)${NC}"
 # Request certificate
 echo -e "${GREEN}Requesting SSL certificate from Let's Encrypt...${NC}"
 echo -e "${YELLOW}This may take a few minutes...${NC}"
+echo ""
+
+# Remove old certificate if exists
+rm -rf certbot/conf/live/${DOMAIN}
+rm -rf certbot/conf/archive/${DOMAIN}
+rm -rf certbot/conf/renewal/${DOMAIN}.conf
 
 docker-compose run --rm certbot certonly \
     --webroot \
@@ -99,14 +105,19 @@ docker-compose run --rm certbot certonly \
     --email ${EMAIL} \
     --agree-tos \
     --no-eff-email \
-    --force-renewal \
-    -d ${DOMAIN}
+    --non-interactive \
+    -d ${DOMAIN} \
+    --verbose
 
 CERT_EXIT_CODE=$?
+
+echo ""
+echo -e "${YELLOW}Certbot exit code: $CERT_EXIT_CODE${NC}"
 
 # Check if certificate was actually created
 if [ -f "certbot/conf/live/${DOMAIN}/fullchain.pem" ] && [ $CERT_EXIT_CODE -eq 0 ]; then
     echo -e "${GREEN}Certificate obtained successfully!${NC}"
+    echo -e "${GREEN}Certificate location: certbot/conf/live/${DOMAIN}/${NC}"
     
     # Restore the default config
     echo -e "${GREEN}Restoring production configuration...${NC}"

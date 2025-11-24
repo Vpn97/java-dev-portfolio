@@ -48,4 +48,20 @@ coverage
 # Docker
 Dockerfile
 docker-compose.yml
+docker-compose.dev.yml
+docker-compose.prod.yml
 .dockerignore
+
+# SSL and Nginx (not needed in Docker image)
+certbot/
+nginx/
+
+# Deployment scripts
+deploy.sh
+init-ssl.sh
+init-ssl-self-signed.sh
+
+# Documentation
+*.md
+!README.md
+

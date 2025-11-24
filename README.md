@@ -1,3 +1,60 @@
+<div align="center">
+
+# 🚀 Professional Developer Portfolio Template
+
+### Production-Ready Portfolio with Automated Docker Deployment & SSL
+
+[![Next.js](https://img.shields.io/badge/Next.js-14-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
+[![Docker](https://img.shields.io/badge/Docker-Ready-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4-38bdf8?style=for-the-badge&logo=tailwind-css)](https://tailwindcss.com/)
+[![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
+
+[🌐 Live Demo](https://vishal.apkzube.com) • [📖 Documentation](./DEPLOYMENT.md) • [⭐ Star this repo](https://github.com/Vpn97/java-dev-portfolio)
+
+![Portfolio Preview](./public/screenshots/hero-dark.png)
+
+</div>
+
+---
+
+## 📖 About This Project
+
+**A complete, production-ready portfolio solution** that goes beyond just a template. This project provides everything you need to deploy a professional developer portfolio with **enterprise-grade infrastructure** in minutes, not hours.
+
+### 🎯 What Makes This Different?
+
+Unlike typical portfolio templates that only give you the frontend code, this project includes:
+
+- ✅ **Complete Infrastructure** - Docker, Nginx, SSL certificates, everything configured
+- ✅ **One-Command Deployment** - Automated script handles everything from SSL to server setup
+- ✅ **Production-Ready** - Battle-tested configuration used in real production environments
+- ✅ **Zero DevOps Knowledge Required** - Just run the script and you're live with HTTPS
+- ✅ **Fully Customizable** - Modern Next.js 14 with TypeScript and Tailwind CSS
+- ✅ **Cost-Effective** - Deploy on any $5/month VPS (AWS EC2, DigitalOcean, etc.)
+
+### 💡 Perfect For
+
+Whether you're a **job seeker** wanting to impress recruiters, a **freelancer** building your brand, or a **developer** showcasing your work - this template provides a professional, secure, and fast portfolio that you can deploy in under 10 minutes.
+
+### 🌟 Key Highlights
+
+- **🚀 Deploy in 5 Minutes** - Seriously. Clone, run script, enter domain, done.
+- **🔒 Automatic HTTPS** - Let's Encrypt SSL with auto-renewal built-in
+- **🐳 Docker-Based** - Consistent deployment across any Linux server
+- **📱 Fully Responsive** - Perfect on mobile, tablet, and desktop
+- **🎨 Dark/Light Mode** - Beautiful UI with theme switching
+- **⚡ Blazing Fast** - Optimized for performance (Lighthouse 95+)
+- **🔄 Easy Updates** - One command to deploy new changes
+
+---
+
+## 🖼️ Screenshots
+
+### Dark Mode
+![Hero Section Dark](./public/screenshots/hero-dark.png)
+![About Section Dark](./public/screenshots/about-dark.png)
+
 ### Light Mode
 ![Hero Section Light](./public/screenshots/hero-light.png)
 ![About Section Light](./public/screenshots/about-light.png)

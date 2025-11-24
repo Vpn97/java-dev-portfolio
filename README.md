@@ -1,103 +1,57 @@
-# Vishal Nagvadiya - Portfolio Website
+# Vishal Nagvadiya - Portfolio
 
-A modern, responsive portfolio website for a Senior Java Developer built with Next.js 14, TypeScript, Tailwind CSS, and Framer Motion.
+A modern, responsive portfolio website built with Next.js 14, TypeScript, and Tailwind CSS, showcasing my work as a Senior Java Developer.
 
-![Portfolio Preview](https://img.shields.io/badge/Next.js-14-black?style=for-the-badge&logo=next.js)
-![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?style=for-the-badge&logo=typescript)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4-38bdf8?style=for-the-badge&logo=tailwind-css)
+![Portfolio Preview](./public/screenshots/hero-dark.png)
 
 ## ✨ Features
 
-- 🎨 **Modern Design** - Clean, professional, and minimalistic design
-- 🌓 **Dark/Light Mode** - Toggle between themes with smooth transitions
-- 📱 **Fully Responsive** - Optimized for all devices (mobile, tablet, desktop)
-- ⚡ **Fast Performance** - Static site generation for optimal loading speeds
-- 🎭 **Smooth Animations** - Framer Motion for elegant scroll and page transitions
-- 🔍 **SEO Optimized** - Meta tags, Open Graph, and structured data
-- 🎯 **Project Filtering** - Filter projects by technology stack
-- 📧 **Contact Form** - Integrated mailto contact functionality
-- 📄 **CV Download** - Direct resume download button
-- 🚀 **Easy Deployment** - One-click deploy to Vercel or GitHub Pages
+- 🎨 **Modern Design** - Clean, professional interface with dark/light mode
+- 📱 **Fully Responsive** - Optimized for all devices
+- ⚡ **Fast Performance** - Built with Next.js 14 for optimal speed
+- 🎭 **Smooth Animations** - Powered by Framer Motion
+- 🔍 **SEO Optimized** - Meta tags and structured data
+- 🐳 **Docker Ready** - Easy deployment with Docker & Nginx
+- � **HTTPS Support** - Automatic SSL with Let's Encrypt
 
-## 🏗️ Project Structure
+## 🖼️ Screenshots
 
-```
-portfolio/
-├── app/
-│   ├── layout.tsx          # Root layout with metadata
-│   ├── page.tsx             # Home page
-│   └── globals.css          # Global styles
-├── components/
-│   ├── Header.tsx           # Navigation header
-│   ├── Footer.tsx           # Footer with social links
-│   ├── ThemeProvider.tsx    # Theme context provider
-│   └── sections/
-│       ├── Hero.tsx         # Hero section
-│       ├── About.tsx        # About me section
-│       ├── Skills.tsx       # Skills showcase
-│       ├── Experience.tsx   # Work experience timeline
-│       ├── Projects.tsx     # Projects grid with filtering
-│       ├── Certifications.tsx  # Certifications display
-│       └── Contact.tsx      # Contact form
-├── data/
-│   └── portfolio.json       # All portfolio content (editable)
-├── public/
-│   └── resume.pdf          # Your CV (add your PDF here)
-├── next.config.mjs         # Next.js configuration
-├── tailwind.config.ts      # Tailwind CSS configuration
-└── package.json            # Dependencies
-```
+### Dark Mode
+![Hero Section Dark](./public/screenshots/hero-dark.png)
+![About Section Dark](./public/screenshots/about-dark.png)
+
+### Light Mode
+![Hero Section Light](./public/screenshots/hero-light.png)
+![About Section Light](./public/screenshots/about-light.png)
 
 ## 🚀 Quick Start
 
 ### Prerequisites
 
 - Node.js 18.x or higher
-- npm or yarn package manager
+- npm or yarn
 
 ### Installation
 
-1. **Clone the repository**
+```bash
+# Clone the repository
+git clone https://github.com/Vpn97/java-dev-portfolio.git
+cd java-dev-portfolio
 
-   ```bash
-   git clone https://github.com/Vpn97/java-dev-portfolio.git
-   cd java-dev-portfolio
-   ```
+# Install dependencies
+npm install
 
-2. **Install dependencies**
+# Run development server
+npm run dev
+```
 
-   ```bash
-   npm install
-   # or
-   yarn install
-   ```
-
-3. **Add your resume**
-
-   - Place your CV/resume PDF in the `public` folder
-   - Name it `resume.pdf` or update the link in `components/sections/Hero.tsx`
-
-4. **Update portfolio content**
-
-   - Edit `data/portfolio.json` with your information
-   - Update personal details, skills, experience, projects, certifications
-
-5. **Run development server**
-
-   ```bash
-   npm run dev
-   # or
-   yarn dev
-   ```
-
-6. **Open your browser**
-   - Navigate to [http://localhost:3000](http://localhost:3000)
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ## 📝 Customization
 
-### Update Personal Information
+### Update Your Information
 
-Edit `data/portfolio.json` to customize all content:
+Edit `data/portfolio.json` with your details:
 
 ```json
 {
@@ -105,236 +59,165 @@ Edit `data/portfolio.json` to customize all content:
     "name": "Your Name",
     "role": "Your Role",
     "email": "your.email@example.com",
-    "summary": "Your professional summary...",
-    "social": {
-      "github": "https://github.com/yourusername",
-      "linkedin": "https://linkedin.com/in/yourusername"
-    }
-  },
-  "skills": { ... },
-  "experience": [ ... ],
-  "projects": [ ... ],
-  "certifications": [ ... ]
-}
-```
-
-### Customize Colors
-
-Update theme colors in `tailwind.config.ts`:
-
-```typescript
-theme: {
-  extend: {
-    colors: {
-      primary: {
-        // Customize your primary color palette
-        500: '#0ea5e9',
-        600: '#0284c7',
-        // ...
-      }
-    }
+    "summary": "Your professional summary..."
   }
 }
 ```
 
-### Add Freelance Profile Links
+### Add Your Resume
 
-Update the freelance section in `data/portfolio.json`:
-
-```json
-"freelance": {
-  "fiverr": "https://www.fiverr.com/yourusername",
-  "upwork": "https://www.upwork.com/freelancers/~yourprofile",
-  "freelancer": "https://www.freelancer.com/u/yourusername"
-}
-```
-
-Then add "Hire Me" buttons in the Hero section by uncommenting the relevant code.
+Place your CV/resume PDF in the `public` folder and name it `cv.pdf`.
 
 ## 🌐 Deployment
 
-### Deploy to Vercel (Recommended)
+### Option 1: Deploy with Docker (Recommended for Production)
 
-1. **Push to GitHub**
+Perfect for deploying on **Amazon EC2**, **DigitalOcean**, or any **Linux server**.
 
-   ```bash
-   git init
-   git add .
-   git commit -m "Initial commit"
-   git branch -M main
-   git remote add origin https://github.com/Vpn97/java-dev-portfolio.git
-   git push -u origin main
-   ```
+#### Requirements
+- Linux server (Ubuntu 20.04+)
+- Docker and Docker Compose
+- Domain name pointing to your server
+- Ports 80 and 443 open
 
-2. **Deploy to Vercel**
-
-   - Visit [vercel.com](https://vercel.com)
-   - Click "New Project"
-   - Import your GitHub repository
-   - Vercel will auto-detect Next.js and deploy
-   - Your site will be live at `https://your-project.vercel.app`
-
-3. **Custom Domain (Optional)**
-   - In Vercel dashboard, go to Settings → Domains
-   - Add your custom domain
-   - Update DNS records as instructed
-
-### Deploy to GitHub Pages
-
-1. **Update `next.config.mjs`**
-
-   ```javascript
-   const nextConfig = {
-     output: "export",
-     basePath: "/portfolio", // Your repo name
-     images: { unoptimized: true },
-   };
-   ```
-
-2. **Build and export**
-
-   ```bash
-   npm run build
-   ```
-
-3. **Deploy using GitHub Actions**
-
-   - Create `.github/workflows/deploy.yml`:
-
-   ```yaml
-   name: Deploy to GitHub Pages
-
-   on:
-     push:
-       branches: [main]
-
-   jobs:
-     build-and-deploy:
-       runs-on: ubuntu-latest
-       steps:
-         - uses: actions/checkout@v3
-         - uses: actions/setup-node@v3
-           with:
-             node-version: "18"
-         - run: npm ci
-         - run: npm run build
-         - uses: peaceiris/actions-gh-pages@v3
-           with:
-             github_token: ${{ secrets.GITHUB_TOKEN }}
-             publish_dir: ./out
-   ```
-
-4. **Enable GitHub Pages**
-   - Go to Settings → Pages
-   - Source: Deploy from branch `gh-pages`
-   - Your site: `https://yourusername.github.io/portfolio`
-
-### Deploy to Netlify
-
-1. **Install Netlify CLI**
-
-   ```bash
-   npm install -g netlify-cli
-   ```
-
-2. **Build the project**
-
-   ```bash
-   npm run build
-   ```
-
-3. **Deploy**
-   ```bash
-   netlify deploy --prod --dir=out
-   ```
-
-### Deploy to Production Server (Docker + Nginx + HTTPS)
-
-For production deployment on your own Linux server with Docker, Nginx, and HTTPS:
-
-#### Quick Deployment
+#### Quick Deploy
 
 ```bash
 # On your Linux server
 git clone https://github.com/Vpn97/java-dev-portfolio.git
 cd java-dev-portfolio
 
-# Run the automated deployment script
+# Run deployment script
 chmod +x deploy.sh
 ./deploy.sh
+
+# Choose option 1 for production with SSL
+# Enter your domain and email
 ```
 
 The script will:
-- ✅ Install Docker and Docker Compose
-- ✅ Set up SSL certificates (Let's Encrypt)
+- ✅ Install Docker & Docker Compose (if needed)
+- ✅ Set up SSL certificate (Let's Encrypt)
 - ✅ Configure Nginx reverse proxy
-- ✅ Start all services with HTTPS
+- ✅ Start your application with HTTPS
 
-#### Manual Deployment
-
-See detailed instructions in:
-- **[QUICKSTART.md](./QUICKSTART.md)** - Fast deployment guide
-- **[DEPLOYMENT.md](./DEPLOYMENT.md)** - Complete documentation
-- **[DEPLOYMENT_CHECKLIST.md](./DEPLOYMENT_CHECKLIST.md)** - Pre-flight checklist
-
-#### Using Makefile
+#### Update Production Deployment
 
 ```bash
-make deploy          # Interactive deployment
-make ssl-init        # Set up Let's Encrypt SSL
-make up              # Start services
-make logs            # View logs
-make help            # Show all commands
+# Pull latest changes
+git pull origin main
+
+# Run deployment script
+./deploy.sh
+
+# Choose option 4: Update existing production deployment
 ```
 
-#### What's Included
+#### Manual Docker Deployment
 
-- 🐳 **Docker** - Containerized application
-- 🔒 **HTTPS** - Automatic SSL with Let's Encrypt
-- 🚀 **Nginx** - Reverse proxy with caching
-- 📊 **Monitoring** - Health checks and logging
-- 🔄 **Auto-renewal** - SSL certificates renew automatically
-- 🛡️ **Security** - Rate limiting, security headers, HSTS
+```bash
+# Build and start services
+docker-compose up -d --build
 
-#### Requirements
+# View logs
+docker-compose logs -f
 
-- Linux server (Ubuntu 20.04+)
-- Docker and Docker Compose
-- Domain name pointing to server
-- Ports 80 and 443 open
+# Stop services
+docker-compose down
+```
 
+### Option 2: Deploy without Docker
 
+#### Deploy to Vercel (Easiest)
 
-- [Next.js 14](https://nextjs.org/) - React framework with App Router
-- [TypeScript](https://www.typescriptlang.org/) - Type-safe JavaScript
-- [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS framework
-- [Framer Motion](https://www.framer.com/motion/) - Animation library
-- [React Icons](https://react-icons.github.io/react-icons/) - Icon library
-- [next-themes](https://github.com/pacocoursey/next-themes) - Theme management
+1. Push your code to GitHub
+2. Visit [vercel.com](https://vercel.com)
+3. Click "New Project"
+4. Import your GitHub repository
+5. Deploy!
+
+Your site will be live at `https://your-project.vercel.app`
+
+#### Deploy to Netlify
+
+```bash
+# Install Netlify CLI
+npm install -g netlify-cli
+
+# Build the project
+npm run build
+
+# Deploy
+netlify deploy --prod
+```
+
+#### Deploy to GitHub Pages
+
+1. Update `next.config.mjs`:
+```javascript
+const nextConfig = {
+  output: "export",
+  basePath: "/java-dev-portfolio",
+  images: { unoptimized: true },
+};
+```
+
+2. Build and deploy:
+```bash
+npm run build
+# Push the `out` folder to gh-pages branch
+```
+
+## 🐳 Docker Configuration
+
+The project includes:
+- **Dockerfile** - Multi-stage build for optimized images
+- **docker-compose.yml** - Orchestrates Next.js, Nginx, and Certbot
+- **Nginx** - Reverse proxy with SSL/TLS
+- **Certbot** - Automatic SSL certificate management
+
+### Docker Services
+
+| Service | Purpose | Port |
+|---------|---------|------|
+| nextjs | Next.js application | 3000 (internal) |
+| nginx | Reverse proxy & SSL | 80, 443 |
+| certbot | SSL certificate management | - |
+
+## 🛠️ Built With
+
+- [Next.js 14](https://nextjs.org/) - React framework
+- [TypeScript](https://www.typescriptlang.org/) - Type safety
+- [Tailwind CSS](https://tailwindcss.com/) - Styling
+- [Framer Motion](https://www.framer.com/motion/) - Animations
+- [React Icons](https://react-icons.github.io/react-icons/) - Icons
+- [Docker](https://www.docker.com/) - Containerization
+- [Nginx](https://nginx.org/) - Web server
 
 ## 📦 Available Scripts
 
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm start` - Start production server
-- `npm run lint` - Run ESLint
+```bash
+npm run dev      # Start development server
+npm run build    # Build for production
+npm start        # Start production server
+npm run lint     # Run ESLint
+```
 
-## 🎯 SEO Features
+## 🔒 Security Features
 
-- Meta tags for search engines
-- Open Graph tags for social media
-- Twitter Card support
-- Semantic HTML structure
-- Optimized images
-- Fast loading times
-- Mobile-friendly design
-- Structured data ready
+- HTTPS enforced (HTTP redirects to HTTPS)
+- Modern TLS 1.2/1.3 only
+- Security headers (HSTS, X-Frame-Options, CSP)
+- Rate limiting for DDoS protection
+- Non-root Docker containers
 
-## 📱 Responsive Breakpoints
+## 📊 Performance
 
-- Mobile: < 768px
-- Tablet: 768px - 1024px
-- Desktop: > 1024px
+- Optimized Docker images (multi-stage builds)
+- Nginx caching for static assets
+- Gzip compression
+- HTTP/2 support
+- Image optimization
 
 ## 🤝 Contributing
 
@@ -349,11 +232,12 @@ This project is open source and available under the [MIT License](LICENSE).
 **Vishal Nagvadiya**
 
 - Email: vpn0097@gmail.com
-- GitHub: [@Vpn_97](https://github.com/vishalnagvadiya)
+- GitHub: [@Vpn97](https://github.com/Vpn97)
 - LinkedIn: [Vishal Nagvadiya](https://www.linkedin.com/in/vishalnagvadiya)
+- Portfolio: [vishal.apkzube.com](https://vishal.apkzube.com)
 
 ---
 
 ⭐ **Star this repo if you found it helpful!**
 
-Built with ❤️ using Next.js and Tailwind CSS
+Built with ❤️ using Next.js, TypeScript, and Docker

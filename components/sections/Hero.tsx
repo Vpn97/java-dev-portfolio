@@ -48,7 +48,7 @@ const Hero = () => {
               className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight leading-tight"
             >
               <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
-                I build things for the web.
+                I build fast, scalable things for the web.
               </span>
             </motion.h2>
 
@@ -58,9 +58,12 @@ const Hero = () => {
               transition={{ duration: 0.5, delay: 0.4 }}
               className="text-slate-600 dark:text-slate-400 text-sm md:text-base leading-relaxed max-w-xl"
             >
-              Senior Software Engineer with <span className="text-blue-600 dark:text-blue-400 font-semibold">6+ Years</span> hands-on experience in designing, developing, and deploying scalable{" "}
-              <span className="text-purple-600 dark:text-purple-400 font-semibold">microservices-based applications</span>. Specialized in Java 17, Spring Boot, REST APIs, Apache Kafka, JPA/Hibernate, and multi-database integrations. Proven track record in building enterprise-grade systems, optimizing performance, leading teams, and delivering high-impact solutions for government and enterprise clients. Strong expertise in{" "}
-              <span className="text-cyan-600 dark:text-cyan-400 font-semibold">DevOps practices</span>, cloud technologies, and end-to-end software development lifecycle.
+              I’m a Senior Software Engineer with <span className="text-blue-600 dark:text-blue-400 font-semibold">6+ Years</span> of experience in designing and developing cloud-ready,{" "}
+              <span className="text-purple-600 dark:text-purple-400 font-semibold">microservices-based applications</span> systems using Java 17, Spring Boot, Kafka, and modern DevOps practices. I love solving complex {" "}
+              <span className="text-cyan-600 dark:text-cyan-400 font-semibold">problems, improving performance, and creating high-impact</span> solutions for enterprises.
+              <br />
+              <br />
+              When I’m not coding, you’ll find me playing chess, watching sci-fi movies, or exploring amazing ideas and innovations.
             </motion.p>
 
             <motion.div

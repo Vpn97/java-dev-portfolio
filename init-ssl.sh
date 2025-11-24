@@ -75,7 +75,7 @@ docker-compose up -d nginx
 sleep 5
 
 # Request certificate
-echo -e "${GREEN}Requesting SSL certificate from Let's Encrypt...${NC}"
+
 docker-compose run --rm certbot certonly \
     --webroot \
     --webroot-path=/var/www/certbot \

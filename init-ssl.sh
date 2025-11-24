@@ -99,7 +99,9 @@ rm -rf certbot/conf/live/${DOMAIN}
 rm -rf certbot/conf/archive/${DOMAIN}
 rm -rf certbot/conf/renewal/${DOMAIN}.conf
 
-docker-compose run --rm certbot certonly \
+# Override entrypoint to run certbot certonly instead of renew
+docker-compose run --rm --entrypoint certbot certbot \
+    certonly \
     --webroot \
     --webroot-path=/var/www/certbot \
     --email ${EMAIL} \

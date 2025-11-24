@@ -41,7 +41,8 @@ echo -e "${YELLOW}Select deployment type:${NC}"
 echo "1) Production with Let's Encrypt SSL (requires domain)"
 echo "2) Development with self-signed SSL"
 echo "3) HTTP only (not recommended)"
-read -p "Enter choice [1-3]: " choice
+echo "4) Update existing production deployment"
+read -p "Enter choice [1-4]: " choice
 
 case $choice in
     1)
@@ -81,6 +82,52 @@ case $choice in
         echo -e "${GREEN}Starting HTTP-only deployment...${NC}"
         docker-compose up -d
         ;;
+    4)
+        echo -e "${GREEN}Updating production deployment...${NC}"
+        echo ""
+        
+        # Pull latest changes
+        echo -e "${YELLOW}Pulling latest changes from repository...${NC}"
+        git pull origin main
+        
+        if [ $? -ne 0 ]; then
+            echo -e "${RED}Failed to pull changes!${NC}"
+            exit 1
+        fi
+        
+        echo -e "${GREEN}✓ Latest changes pulled${NC}"
+        echo ""
+        
+        # Rebuild and restart
+        echo -e "${YELLOW}Rebuilding and restarting services...${NC}"
+        docker-compose up -d --build
+        
+        if [ $? -ne 0 ]; then
+            echo -e "${RED}Failed to rebuild services!${NC}"
+            exit 1
+        fi
+        
+        echo -e "${GREEN}✓ Services rebuilt and restarted${NC}"
+        echo ""
+        
+        # Wait for services to start
+        echo -e "${YELLOW}Waiting for services to start...${NC}"
+        sleep 10
+        
+        # Show status
+        echo -e "${GREEN}Service status:${NC}"
+        docker-compose ps
+        
+        echo ""
+        echo -e "${GREEN}=== Update Complete ===${NC}"
+        echo ""
+        echo -e "${YELLOW}Checking logs for errors...${NC}"
+        docker-compose logs --tail=20 nextjs
+        
+        echo ""
+        echo -e "${GREEN}Deployment updated successfully!${NC}"
+        echo -e "${YELLOW}Visit your site to verify changes${NC}"
+        ;;
     *)
         echo -e "${RED}Invalid choice${NC}"
         exit 1
@@ -94,5 +141,5 @@ echo -e "${YELLOW}Useful commands:${NC}"
 echo "  View logs:           docker-compose logs -f"
 echo "  Stop services:       docker-compose down"
 echo "  Restart services:    docker-compose restart"
-echo "  Update application:  docker-compose up -d --build"
+echo "  Update application:  ./deploy.sh (choose option 4)"
 echo ""

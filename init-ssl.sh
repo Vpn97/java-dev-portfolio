@@ -116,8 +116,27 @@ CERT_EXIT_CODE=$?
 echo ""
 echo -e "${YELLOW}Certbot exit code: $CERT_EXIT_CODE${NC}"
 
+# Wait for volume sync
+echo -e "${YELLOW}Waiting for certificate files to sync...${NC}"
+sleep 3
+
 # Check if certificate was actually created
-if [ -f "certbot/conf/live/${DOMAIN}/fullchain.pem" ] && [ $CERT_EXIT_CODE -eq 0 ]; then
+echo -e "${YELLOW}Checking for certificate files...${NC}"
+if [ -f "certbot/conf/live/${DOMAIN}/fullchain.pem" ]; then
+    echo -e "${GREEN}✓ Found fullchain.pem${NC}"
+else
+    echo -e "${RED}✗ fullchain.pem not found${NC}"
+    ls -la certbot/conf/live/ 2>/dev/null || echo "Directory doesn't exist"
+fi
+
+if [ -f "certbot/conf/live/${DOMAIN}/privkey.pem" ]; then
+    echo -e "${GREEN}✓ Found privkey.pem${NC}"
+else
+    echo -e "${RED}✗ privkey.pem not found${NC}"
+fi
+
+if [ -f "certbot/conf/live/${DOMAIN}/fullchain.pem" ] && [ -f "certbot/conf/live/${DOMAIN}/privkey.pem" ] && [ $CERT_EXIT_CODE -eq 0 ]; then
+    echo ""
     echo -e "${GREEN}Certificate obtained successfully!${NC}"
     echo -e "${GREEN}Certificate location: certbot/conf/live/${DOMAIN}/${NC}"
     
